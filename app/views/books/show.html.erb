@@ -1,0 +1,13 @@
+<h2>Book detail</h2>
+<table>
+  <tr>
+    <td><%= image_tag 'no_image.jpg' %></td>
+    <td><%= @book.title %></td>
+    <td><%= @book.body %></td>
+    <td>edit</td>
+    <td>destroy</td>
+  </tr>
+  <tr>
+    <td><%= @book.user.name %></td>
+  </tr>
+</table>
