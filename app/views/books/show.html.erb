@@ -4,7 +4,7 @@
     <td><%= image_tag 'no_image.jpg' %></td>
     <td><%= @book.title %></td>
     <td><%= @book.body %></td>
-    <td>edit</td>
+    <td><%= link_to "Edit",edit_book_path(@book) %></td>
     <td>destroy</td>
   </tr>
   <tr>
