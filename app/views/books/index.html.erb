@@ -23,7 +23,10 @@
   </tr>
  </table>
 
+  <p><%= link_to "編集", edit_user_path(@user) %></p>
+
  <h2>New book</h2>
+
   <%= form_with model: @book do |f| %>
     <h4>Title</h4>
       <%= f.text_field :title %>
@@ -44,7 +47,9 @@
    <% @books.each do |book| %>
     <tr>
      <td><%= image_tag book.user.get_profile_image(100,100) %></td>
-     <td><%= book.title %></td>
+     <td><%= link_to(book_path(book.id)) do %>
+           <%= book.title %>
+         <% end %></td>
      <td><%= book.body %></td>
     </tr>
    <% end %>
