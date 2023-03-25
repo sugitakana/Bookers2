@@ -15,10 +15,12 @@
    <%= f.text_field :title %>
    <p>Opinion</p>
    <%= f.text_area :body %>
+   <div>
    <%= f.submit 'Update Book' %>
+   </div>
  <% end %>
 <% end %> 
 
-<%= link_to "Show", book_path(@book) %>
+<p><%= link_to "Show", book_path(@book) %>
  <sapn>|</sapn>
-<%=link_to "Back", books_path %>
+<%=link_to "Back", books_path %></p>
