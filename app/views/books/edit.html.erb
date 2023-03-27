@@ -1,26 +1,30 @@
-<h1>Editing Book</h1>
-  
-<%= form_with model:@book, local:true do |f| %>
-
- <% if @book.errors.any? %>
-   <h3><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h3>
-    <ul>
-     <% @book.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
+<div class="container px-5 px-sm-0">
+ <div class="row">
+  <div class="col-md-5 mt-3 mx-auto">
+    <h1>Editing Book</h1>
+    <%= form_with model:@book, local:true do |f| %>
+     <% if @book.errors.any? %>
+      <h3><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h3>
+      <ul>
+       <% @book.errors.full_messages.each do |message| %>
+       <li><%= message %></li>
+       <% end %>
+      </ul>
      <% end %>
-    </ul>
- <% end %>
-  <%= form_with model:@book do |f| %>
-   <p>Title</p>
-   <%= f.text_field :title %>
-   <p>Opinion</p>
-   <%= f.text_area :body %>
-   <div>
-   <%= f.submit 'Update Book' %>
-   </div>
- <% end %>
-<% end %> 
+     <div class="form-body">
+      <%= form_with model:@book do |f| %>
+      <span>Title</span>
+      <%= f.text_field :title, class:"form-control mt-2 mb-3" %>
+      <span>Opinion</span>
+      <%= f.text_area :body, class:"form-control my-2" %>
+      <%= f.submit 'Update Book', :class=>"btn btn-success mt-2" %>
+      <% end %>
+     </div>
+   <% end %> 
+   <p class="my-4"><%= link_to "Show", book_path(@book) %>
+       <sapn>|</sapn>
+      <%=link_to "Back", books_path %></p>
+  </div>
+ </div>
+</div>
 
-<p><%= link_to "Show", book_path(@book) %>
- <sapn>|</sapn>
-<%=link_to "Back", books_path %></p>
